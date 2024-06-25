@@ -17,6 +17,14 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _rememberMe = false;
+  bool _isFilled = false;
+
+   void _checkFilled() {
+    setState(() {
+      _isFilled = _emailController.text.isNotEmpty &&
+          _passwordController.text.isNotEmpty;
+    });
+  }
 
   Future<void> _login() async {
     final email = _emailController.text;
@@ -64,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                 'Promilo',
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 60),
               const Text(
                 'Hi, Welcome Back!',
                 
@@ -87,6 +95,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 10),
               TextField(
         controller: _emailController,
+        onChanged: (_) => _checkFilled(),
         decoration: InputDecoration(
           labelText: 'Email',
           border: OutlineInputBorder(
@@ -105,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     'Sign in with OTP',
                     style: TextStyle(
                       fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                      
                       color: Colors.purple,
                     ),
                   ),
@@ -114,6 +123,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 10),
               TextField(
                 controller: _passwordController,
+                onChanged: (_) => _checkFilled(),
                 obscureText: true,
                 decoration: const InputDecoration(
                   labelText: 'Password',
@@ -149,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
                       'Forgot password?',
                       style: TextStyle(
                         fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                      
                       color: Colors.purple,
                       ),
                     ),
@@ -158,14 +168,15 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 20),
               SizedBox(
-                width: 380,
-                height: 50,
-                child: ElevatedButton(
-                onPressed: _login,
-                style: ElevatedButton.styleFrom(
-                  
-                  side: const BorderSide(color: Colors.blue),
-                ),
+                 width: 380,
+            height: 50,
+            child: ElevatedButton(
+              onPressed: _isFilled ? _login : null,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: _isFilled ? Colors.purple : Colors.grey,
+                foregroundColor: Colors.white,
+                side: BorderSide(color: Colors.blue),
+              ),
                 child: const Text('Submit'),
               ),
               ),
