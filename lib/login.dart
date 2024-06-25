@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home.dart';
 import 'package:http/http.dart' as http;
 import 'package:crypto/crypto.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -62,37 +64,38 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 50),
-              const Text(
+             SizedBox(height: 50.h),
+              Text(
                 'Promilo',
-                style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 60),
-              const Text(
+              SizedBox(height: 60.h),
+              Text(
                 'Hi, Welcome Back!',
                 
-                style:  TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                style:  TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 50),
+              SizedBox(height: 50.h),
               
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Align(
                   alignment: Alignment.topLeft,
-                  child: const Text(
+                  child: Text(
                   'Please sign in to continue',
-                  style: TextStyle(fontSize: 17),
+                  style: TextStyle(fontSize: 17.sp),
                 ),
                 ),
               ),
               
               
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
               TextField(
         controller: _emailController,
         onChanged: (_) => _checkFilled(),
@@ -110,17 +113,17 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     // Handle OTP sign in
                   },
-                  child: const Text(
+                  child: Text(
                     'Sign in with OTP',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       
                       color: Colors.purple,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
               TextField(
                 controller: _passwordController,
                 onChanged: (_) => _checkFilled(),
@@ -132,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
               
               
               Row(
@@ -155,10 +158,10 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       // Handle forgot password
                     },
-                    child: const Text(
+                    child: Text(
                       'Forgot password?',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 18.sp,
                       
                       color: Colors.purple,
                       ),
@@ -166,10 +169,10 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
               SizedBox(
-                 width: 380,
-            height: 50,
+            width: 380.w,
+            height: 50.h,
             child: ElevatedButton(
               onPressed: _isFilled ? _login : null,
               style: ElevatedButton.styleFrom(
@@ -180,16 +183,51 @@ class _LoginPageState extends State<LoginPage> {
                 child: const Text('Submit'),
               ),
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30.h),
               const Text('or'),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  
-                ],
-              ),
-              const SizedBox(height: 20),
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Expanded(
+      child: Image.network(
+        'https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png',
+        height: 40,
+        fit: BoxFit.contain,
+      ),
+    ),
+    Expanded(
+      child: Image.network(
+        'https://www.freepnglogos.com/uploads/linkedin-logo-design-30.png',
+        height: 40,
+        fit: BoxFit.contain,
+      ),
+    ),
+    Expanded(
+      child: Image.network(
+        'https://www.freepnglogos.com/uploads/facebook-logo-icon/facebook-logo-icon-file-facebook-icon-svg-wikimedia-commons-4.png',
+        height: 40,
+        fit: BoxFit.contain,
+      ),
+    ),
+    Expanded(
+      child: Image.network(
+        'https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-logo-instagram-ini-ada-varias-dan-transparan-33.png',
+        height: 40,
+        fit: BoxFit.contain,
+      ),
+    ),
+    Expanded(
+      child: Image.network(
+        'https://www.freepnglogos.com/uploads/whatsapp-logo-png-31.png',
+        height: 40,
+        fit: BoxFit.contain,
+      ),
+    ),
+  ],
+),
+
+              SizedBox(height: 20.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [

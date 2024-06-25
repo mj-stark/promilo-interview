@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class Ontap extends StatefulWidget {
@@ -45,7 +46,7 @@ class _OntapState extends State<Ontap> {
                 child: Column(
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                       child: Container(
                         height: screenHeight * 0.42,
                         child: Stack(
@@ -81,7 +82,7 @@ class _OntapState extends State<Ontap> {
                               ],
                             ),
                             Positioned(
-                              bottom: 10,
+                              bottom: 10.h,
                               left: 0,
                               right: 0,
                               child: Center(
@@ -89,8 +90,8 @@ class _OntapState extends State<Ontap> {
                                   controller: _pageController,
                                   count: 5,
                                   effect: WormEffect(
-                                    dotHeight: 8,
-                                    dotWidth: 8,
+                                    dotHeight: 8.h,
+                                    dotWidth: 8.w,
                                     activeDotColor: Colors.purple,
                                   ),
                                 ),
@@ -104,7 +105,7 @@ class _OntapState extends State<Ontap> {
                       decoration: BoxDecoration(
                           color: Colors.grey[300],
                           borderRadius:
-                              BorderRadius.vertical(top: Radius.circular(-20))),
+                              BorderRadius.vertical(top: Radius.circular(0))),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -112,29 +113,29 @@ class _OntapState extends State<Ontap> {
                               icon: Icon(
                                 Icons.download,
                                 color: Colors.grey[800],
-                                size: 25,
+                                size: 25.sp,
                               ),
                               onPressed: () {}),
                           IconButton(
                               icon: Icon(Icons.bookmark_border,
                                   color: Colors.grey[800]
-                                  ,size: 25,),
+                                  ,size: 25.sp,),
                                   
                               onPressed: () {}),
                           IconButton(
                               icon: Icon(Icons.favorite_outline,
                                   color: Colors.grey[800],
-                                  size: 25,),
+                                  size: 25.sp,),
                               onPressed: () {}),
                           IconButton(
                               icon: Icon(Icons.fullscreen,
                                   color: Colors.grey[800],
-                                  size: 25,),
+                                  size: 25.sp,),
                               onPressed: () {}),
                           IconButton(
                               icon: Icon(Icons.star_border,
                                   color: Colors.grey[800],
-                                  size: 25,),
+                                  size: 25.sp,),
                               onPressed: () {}),
                           IconButton(
                               icon: Icon(Icons.share, color: Colors.grey[800],size: 25,),
@@ -148,33 +149,33 @@ class _OntapState extends State<Ontap> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 10.h,
               ),
               Row(
                 children: [
                   Icon(
                     Icons.bookmark_border,
                     color: Colors.purple,
-                    size: 20,
+                    size: 20.sp,
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   ),
                   Text('1034'),
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   ),
                   Icon(
                     Icons.favorite_border,
                     color: Colors.purple,
-                    size: 20,
+                    size: 20.sp,
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   ),
                   Text('1034'),
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -186,31 +187,31 @@ class _OntapState extends State<Ontap> {
                         children: [
                           Icon(
                             Icons.star,
-                            size: 15,
+                            size: 15.sp,
                             color: Colors.purple,
                           ),
                           Icon(
                             Icons.star,
-                            size: 15,
+                            size: 15.sp,
                             color: Colors.purple,
                           ),
                           Icon(
                             Icons.star,
-                            size: 15,
+                            size: 15.sp,
                             color: Colors.purple,
                           ),
                           Icon(
                             Icons.star,
-                            size: 15,
+                            size: 15.sp,
                             color: Colors.purple,
                           ),
                           Icon(
                             Icons.star_outline,
-                            size: 15,
+                            size: 15.sp,
                             color: Colors.purple,
                           ),
                           SizedBox(
-                            width: 10,
+                            width: 10.w,
                           ),
                           Text('3.2'),
                         ],
@@ -219,39 +220,39 @@ class _OntapState extends State<Ontap> {
                   )
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Actor Name',
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   Text('Hidden Actress',style: TextStyle(color: Colors.grey[600]),),
-                  SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   Row(
                     children: [
                       Icon(Icons.access_time, size: 16),
-                      SizedBox(width: 4),
+                      SizedBox(width: 4.w),
                       Text('Duration 20 Mins',style: TextStyle(color: Colors.grey[600]),),
                     ],
                   ),
-                  SizedBox(height: 4),
+                  SizedBox(height: 4.h),
                   Row(
                     children: [
                       Icon(Icons.wallet, size: 16),
-                      SizedBox(width: 4),
+                      SizedBox(width: 4.w),
                       Text('Total Average Fees ₹9,999',style: TextStyle(color: Colors.grey[600]),),
                     ],
                   ),
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 5.h,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('About', style: TextStyle(fontWeight: FontWeight.bold)),
-                  SizedBox(height: 5),
+                  SizedBox(height: 5.h),
                   Text(
                     'From cardiovascular health to fitness, flexibility, balance, stress relief, better sleep, increased cognitive performance, and more, surf therapy offers a wide range of benefits. If you\'re wondering what are the benefits of going on a surf camp...',
                     style: TextStyle(color: Colors.grey[600]),

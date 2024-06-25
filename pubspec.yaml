@@ -15,6 +15,7 @@ dependencies:
   iconsax: ^0.0.8
   smooth_page_indicator: ^1.1.0
   share_plus: ^9.0.0
+  flutter_svg: ^2.0.10+1
   
 
 dev_dependencies:
